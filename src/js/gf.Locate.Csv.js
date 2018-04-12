@@ -82,6 +82,7 @@
                 }
             }).appendTo(o.target);
             var clearBtn = $('<button/>', {
+                class: 'btn btn-warning',
                 text: '清除',
                 css: {
                     'width': '100%'
@@ -144,15 +145,21 @@
 
                             } else {
                                 var th = $('<th/>', {
+                                    css: {
+                                        'vertical-align': 'middle'
+                                    },
                                     text: ele
                                 }).appendTo(thead_tr);
                             }
                         });
                         var th_1 = $('<th/>').prependTo(thead_tr);
                         var btn_all = $('<button/>', {
-                            class: 'btn ' + pluginName + '_locateAll',
-                            text: '全部定位'
+                            class: 'btn btn-default btn-circle ' + pluginName + '_locateAll'
                         }).appendTo(th_1);
+                        var i_all = $('<i/>', {
+                            class: 'mdi mdi-map-marker-multiple',
+                            title: '全部定位'
+                        }).appendTo(btn_all);
 
                         var tbody = $('<tbody/>').appendTo(table);
                         for (var i = 1; i < content.length; i++) {
@@ -186,13 +193,16 @@
                             });
                             var td_1 = $('<td/>').prependTo(tr);
                             var btn_one = $('<button/>', {
-                                class: 'btn ' + pluginName + '_locateOne',
-                                text: '定位',
+                                class: 'btn btn-default btn-circle ' + pluginName + '_locateOne',
                                 'data-x': x * 1,
                                 'data-y': y * 1,
                                 'data-title': title,
                                 'data-descript': descript
                             }).appendTo(td_1);
+                            var i_one = $('<i/>', {
+                                class: 'mdi mdi-map-marker',
+                                title: '定位'
+                            }).appendTo(btn_one);
 
                             arrData.push({
                                 x: x * 1,
