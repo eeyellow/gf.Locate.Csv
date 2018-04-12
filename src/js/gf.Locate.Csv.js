@@ -60,24 +60,28 @@
                 }
             }).appendTo(o.target);
             var fileInput = $('<input/>', {
+                class: 'form-control',
                 type: 'file',
                 css: {
-                    'width': '70%'
+                    'width': '100%',
+                    'margin-bottom': '1rem'
                 }
             }).appendTo(row1);
             fileInput.get(0).addEventListener('change', o._handleFileSelect, false);
             var exampleDownload = $('<button/>', {
-                text: '範例下載',
-                class: pluginName + '_downloadExample',
+                class: 'btn btn-success btn-round ' + pluginName + '_downloadExample',
                 css: {
-                    'width': '30%'
+                    'width': '100%'
                 }
             }).appendTo(row1);;
+            var exampleIcon = $('<i/>', {
+                text: ' 範例下載',
+                class: 'mdi mdi-cloud-download'
+            }).appendTo(exampleDownload)
 
             var row_clear = $("<div/>", {
                 class: pluginName + '_clearContainer',
                 css: {
-                    'height': '30px',
                     'display': 'none'
                 }
             }).appendTo(o.target);
@@ -135,7 +139,10 @@
                         var content = e.target.result.trim().split('\n');
 
                         var table = $('<table/>', {
-                            class: 'table'
+                            class: 'table table-bordered',
+                            css: {
+                                'font-size': '0.6rem'
+                            }
                         });
 
                         var thead = $('<thead/>').appendTo(table);
@@ -146,13 +153,21 @@
                             } else {
                                 var th = $('<th/>', {
                                     css: {
-                                        'vertical-align': 'middle'
+                                        'text-align': 'center',
+                                        'vertical-align': 'middle',
+                                        'padding': '0.5rem 0'
                                     },
                                     text: ele
                                 }).appendTo(thead_tr);
                             }
                         });
-                        var th_1 = $('<th/>').prependTo(thead_tr);
+                        var th_1 = $('<th/>', {
+                            css: {
+                                'width': '50px',
+                                'text-align': 'center',
+                                'padding': '0.5rem 0'
+                            }
+                        }).prependTo(thead_tr);
                         var btn_all = $('<button/>', {
                             class: 'btn btn-default btn-circle ' + pluginName + '_locateAll'
                         }).appendTo(th_1);
@@ -188,10 +203,20 @@
                                 }
 
                                 var td = $('<td/>', {
+                                    css: {
+                                        'text-align': 'center',
+                                        'padding': '0.5rem 0'
+                                    },
                                     text: ele
                                 }).appendTo(tr);
                             });
-                            var td_1 = $('<td/>').prependTo(tr);
+                            var td_1 = $('<td/>', {
+                                css: {
+                                    'width': '50px',
+                                    'text-align': 'center',
+                                    'padding': '0.5rem 0'
+                                }
+                            }).prependTo(tr);
                             var btn_one = $('<button/>', {
                                 class: 'btn btn-default btn-circle ' + pluginName + '_locateOne',
                                 'data-x': x * 1,
