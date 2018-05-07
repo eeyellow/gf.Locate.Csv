@@ -130,9 +130,9 @@
             var files = evt.target.files;
             for (var i = 0, f; f = files[i]; i++) {
                 // Only process csv files.
-                if (!f.type.match('csv.*')) {
-                    continue;
-                }
+                //if (!f.type.match('csv.*')) {
+                //    continue;
+                //}
                 var reader = new FileReader();
                 reader.onload = (function (theFile, o) {
                     return function (e) {
