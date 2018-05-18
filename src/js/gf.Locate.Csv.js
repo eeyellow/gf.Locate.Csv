@@ -147,9 +147,17 @@
 
                         var thead = $('<thead/>').appendTo(table);
                         var thead_tr = $('<tr/>').appendTo(thead);
+
+                        var srs = "EPSG:4326";
                         content[0].split(',').forEach(function (ele, idx) {
                             if (idx <= 1) {
-
+                                if (ele.indexOf("84") >= 0) {
+                                    srs = "EPSG:4326";
+                                } else if (ele.indexOf("97") >= 0) {
+                                    srs = "EPSG:3826";
+                                } else if (ele.indexOf("67") >= 0) {
+                                    srs = "EPSG:3828";
+                                }
                             } else {
                                 var th = $('<th/>', {
                                     css: {
@@ -222,7 +230,8 @@
                                 'data-x': x * 1,
                                 'data-y': y * 1,
                                 'data-title': title,
-                                'data-descript': descript
+                                'data-descript': descript,
+                                'data-srs': srs
                             }).appendTo(td_1);
                             var i_one = $('<i/>', {
                                 class: 'mdi mdi-map-marker',
@@ -233,7 +242,8 @@
                                 x: x * 1,
                                 y: y * 1,
                                 title: title,
-                                descript: descript
+                                descript: descript,
+                                srs: srs
                             });
                         }
 
