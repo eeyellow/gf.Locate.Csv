@@ -81,8 +81,7 @@
             var exampleDownload_97 = $('<button/>', {
                 class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_97',
                 css: {
-                    'width': '100%',
-                    'margin-top': '5px'
+                    'width': '100%'
                 }
             }).appendTo(row1);;
             var exampleIcon = $('<i/>', {
@@ -92,8 +91,7 @@
             var exampleDownload_67 = $('<button/>', {
                 class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_67',
                 css: {
-                    'width': '100%',
-                    'margin-top': '5px'
+                    'width': '100%'
                 }
             }).appendTo(row1);;
             var exampleIcon = $('<i/>', {
@@ -138,13 +136,14 @@
                     x: $(this).data().x,
                     y: $(this).data().y,
                     title: $(this).data().title,
-                    descript: $(this).data().descript
+                    descript: $(this).data().descript,
+                    srs: $(this).data().srs
                 };
                 o.target.trigger('onLocateOne', result);
             });
 
             o.target.on('click', '.' + pluginName + '_downloadExample_84', function () {
-                window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE.csv");
+                window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE_WGS84.csv");
             });
             o.target.on('click', '.' + pluginName + '_downloadExample_97', function () {
                 window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE_TWD97.csv");
