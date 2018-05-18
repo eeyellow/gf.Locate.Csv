@@ -81,7 +81,8 @@
             var exampleDownload_97 = $('<button/>', {
                 class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_97',
                 css: {
-                    'width': '100%'
+                    'width': '100%',
+                    'margin-top': '10px'
                 }
             }).appendTo(row1);;
             var exampleIcon = $('<i/>', {
@@ -91,7 +92,8 @@
             var exampleDownload_67 = $('<button/>', {
                 class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_67',
                 css: {
-                    'width': '100%'
+                    'width': '100%',
+                    'margin-top': '10px'
                 }
             }).appendTo(row1);;
             var exampleIcon = $('<i/>', {
