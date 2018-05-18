@@ -68,16 +68,36 @@
                 }
             }).appendTo(row1);
             fileInput.get(0).addEventListener('change', o._handleFileSelect, false);
-            var exampleDownload = $('<button/>', {
-                class: 'btn btn-success btn-round ' + pluginName + '_downloadExample',
+            var exampleDownload_84 = $('<button/>', {
+                class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_84',
                 css: {
                     'width': '100%'
                 }
             }).appendTo(row1);;
             var exampleIcon = $('<i/>', {
-                text: ' 範例下載',
+                text: ' WGS84範例下載',
                 class: 'mdi mdi-cloud-download'
-            }).appendTo(exampleDownload)
+            }).appendTo(exampleDownload_84);
+            var exampleDownload_97 = $('<button/>', {
+                class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_97',
+                css: {
+                    'width': '100%'
+                }
+            }).appendTo(row1);;
+            var exampleIcon = $('<i/>', {
+                text: ' TWD97範例下載',
+                class: 'mdi mdi-cloud-download'
+            }).appendTo(exampleDownload_97);
+            var exampleDownload_67 = $('<button/>', {
+                class: 'btn btn-success btn-round ' + pluginName + '_downloadExample_67',
+                css: {
+                    'width': '100%'
+                }
+            }).appendTo(row1);;
+            var exampleIcon = $('<i/>', {
+                text: ' TWD67範例下載',
+                class: 'mdi mdi-cloud-download'
+            }).appendTo(exampleDownload_67);
 
             var row_clear = $("<div/>", {
                 class: pluginName + '_clearContainer',
@@ -121,8 +141,14 @@
                 o.target.trigger('onLocateOne', result);
             });
 
-            o.target.on('click', '.' + pluginName + '_downloadExample', function () {
+            o.target.on('click', '.' + pluginName + '_downloadExample_84', function () {
                 window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE.csv");
+            });
+            o.target.on('click', '.' + pluginName + '_downloadExample_97', function () {
+                window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE_TWD97.csv");
+            });
+            o.target.on('click', '.' + pluginName + '_downloadExample_67', function () {
+                window.open("http://imap.swcb.gov.tw/gee/gee/data/SAMPLE_TWD67.csv");
             });
         },
         _handleFileSelect: function (evt) {
